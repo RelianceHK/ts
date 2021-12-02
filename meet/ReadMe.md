@@ -13,6 +13,9 @@
 - 网易会议
 > https://meeting.163.com
 
+- 华为云会议管理平台
+> https://bmeeting.huaweicloud.com
+
 - 会畅通讯视频会议 | 全球会议中心
 > https://meeting.bizvideo.cn
 >>  BizConf Video全球会议中心
