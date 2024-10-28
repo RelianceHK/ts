@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自动显示繁体显示日期计算器|代码案例</title>
+	</head>
+	<body>
+
+		<div class="home-new-bd">
+			<div class="box clearfloat">
+				<a class="box-img" href="#" title="【瑞联周年庆】在一起 创未来">
+					<img src="#" alt="【瑞联周年庆】在一起 创未来">
+					<div class="img-mark">
+						<i>
+						</i>
+					</div>
+				</a>
+				<div class="box-right">
+					<div class="box-title">
+						<a href="#" title="【瑞联周年庆】在一起 创未来">
+							<font color="#86204A"><strong>
+									<span id="result-1"></span>(1998~<span id="currentYear"></span>)
+								</strong></font>
+						</a>
+					</div>
+					<div class="box-time">
+						<span id="currentYearSpan-1"></span>-10-10 <span id="currentTime"></span>
+						<script>
+							function updateTime() {
+								const now = new Date();
+								const timeString = now.toLocaleTimeString();
+								document.getElementById('currentTime').textContent = timeString;
+							}
+							setInterval(updateTime, 1000);
+							updateTime();
+						</script>
+					</div>
+					<!--<a href="https://mp.weixin.qq.com/s/kygWGyjrYlZakPgZcAStbw" title="【瑞联周年庆】在一起 创未来">-->
+					<a href="#" title="【瑞联周年庆】在一起 创未来">
+						<strong>
+							<span id="currentYearSpan-2"></span>年10月10日</strong>，<strong><span
+								id="result-2"></span></strong>。<br>
+						健康行业里，不是每一个企业都有机会<strong><span id="result-3"></span></strong>。<br>
+						<strong>1998年10月10日</strong>，
+						瑞联在“<strong>
+							<font color="#86204A">红色根脉·浙江嘉兴</font>
+						</strong>”荣耀之地诞生。<br>
+						<strong><span id="result-4"></span></strong>，从小到大，从弱到强，
+						市场从国内到国际，瑞联日新月异，不断强大自己，惠益顾客。
+						<div style="text-align:right">
+							<strong>
+								<font color="#86204A">---【<span id="result-5"></span>】在一起 创未来</font>
+							</strong>
+					</a>
+				</div>
+				<div class="box-desc">
+				</div>
+				</a>
+				<!--// 这是使用 JavaScript 实现的日期计算器代码，可以在网页中显示自动获取当前日期与 1998 年 10 月 10 日之间的年数，并在5个不同的地方显示结果：-->
+				<script>
+					// 获取当前日期
+					const currentDate = new Date();
+					const currentYear = currentDate.getFullYear();
+
+					// 目标日期
+					const targetDate = new Date(1998, 9, 10);
+					// 计算时间差（毫秒）
+					const timeDiff = currentDate - targetDate;
+					// 转换为年数
+					const yearsDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
+
+					// 转换为繁体中文年份表示
+					function convertToTraditionalChineseNumber(number) {
+						const chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+						let result = '';
+						if (number < 10) {
+							return chineseNumbers[number];
+						} else if (number === 10) {
+							return '十';
+						} else if (number === 20) {
+							return '廿';
+						} else if (number < 30) {
+							return '廿' + chineseNumbers[number - 20];
+						}
+						return result;
+					}
+
+					const traditionalYearsDiff = convertToTraditionalChineseNumber(yearsDiff);
+
+					document.getElementById('currentYear').textContent = currentYear;
+					document.getElementById('currentYearSpan-1').textContent = currentYear;
+					document.getElementById('currentYearSpan-2').textContent = currentYear;
+					document.getElementById('result-1').innerHTML = '热烈祝贺瑞联集团成立' + traditionalYearsDiff + '周年！';
+					document.getElementById('result-2').innerHTML = '瑞联' + yearsDiff + '岁生日';
+					document.getElementById('result-3').innerHTML = '庆祝' + yearsDiff + '周岁生日';
+					document.getElementById('result-4').innerHTML = yearsDiff + '载';
+					document.getElementById('result-5').innerHTML = '瑞联' + yearsDiff + '周年庆';
+				</script>
+				<!--// 这是使用 JavaScript 实现的日期计算器代码，可以在网页中显示自动获取当前日期与 1998 年 10 月 10 日之间的年数，并在5个不同的地方显示结果：-->
+			</div>
+			<div class="bg">
+			</div>
+		</div>
+	</body>
+</html>
